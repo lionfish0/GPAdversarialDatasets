@@ -42,10 +42,10 @@ def getMNISTexample(scalingfactor=7,Ntraining=500,splittype='01'):
     Y = Y[0:Ntraining]
     X = scale(X,scalingfactor)
     newres = int(X.shape[1]**.5)
-    for i in range(len(X)):
-        for j in range(i%4):
-            x = X[i,:].reshape(newres,newres)
-            X[i,:] = np.array(list(zip(*x[::-1]))).reshape(newres**2)
+#    for i in range(len(X)):
+#        for j in range(i%4):
+#            x = X[i,:].reshape(newres,newres)
+#            X[i,:] = np.array(list(zip(*x[::-1]))).reshape(newres**2)
 
 
     return X[0:Ntraining,:],Y[0:Ntraining][:,None]
